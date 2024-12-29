@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>購物車</title>
+  <link rel="stylesheet" href="css/cart.css">
+</head>
+<body>
+  <header>
+    <div class="header-container">
+      <nav class="nav-left">
+        <a href="about.html">關於我們</a>
+        <a href="news.html">最新消息</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-button" onclick="toggleDropdown()">商品分類 ▼</a>
+          <div id="dropdown-menu" class="dropdown-content">
+            <a href="food.html">古味食堂</a>
+            <a href="drinks.html">時光飲吧</a>
+            <a href="toys.html">童趣樂園</a>
+            <a href="supplies.html">懷舊良品</a>
+          </div>
+        </div>
+        
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+      <h1 class="store-name">胖呆雜貨店</h1>
+
+      <div class="nav-right">
+        <a href="member.html">
+            登入/註冊 |
+        </a>
+        <a href="cart.html">
+            🛒 
+            <span id="cart-count" style=" color: white; border-radius: 50%; font-size: 15px;">0</span>
+        </a>
+        <a href="collect.html">
+            <button id="wishlist-btn" style="background: none; border: none; font-size: 28px; cursor: pointer;">
+                <span id="heart-icon" style="color: white;">&#9825;</span>
+            </button>
+        </a>
+        <span id="wishlist-count" style="color: white; border-radius: 50%; font-size: 13px;">0</span>
+
+
+      </div>
+    </div>
+</header>
+
+  <div class="cart-page">
+    <!-- 購物車商品部分 -->
+    <div class="cart-items">
+      <h2>購物車商品</h2>
+      <div id="cart-container">
+        <!-- 商品內容會由 JS 動態生成 -->
+      </div>
+    </div>
+
+    <!-- 訂單總結部分 -->
+    <div class="order-summary">
+      <h2>訂單總結</h2>
+      <div id="summary-details">
+        <p>商品總金額：NT$<span id="subtotal">0</span></p>
+        <p>運費：NT$<span id="shipping-fee">50</span></p>
+        <p><strong>總金額：NT$<span id="total">0</span></strong></p>
+        <a href="checkout.html"><button id="checkout-btn">去結帳</button></a>
+        
+      </div>
+    </div>
+
+    <!-- 自訂的確認窗口 -->
+    <div id="custom-confirm" class="custom-confirm" style="display: none;">
+      <div class="confirm-content">
+        <p>確定要刪除這件商品嗎？</p>
+        <button id="confirm-yes" class="confirm-btn">確定</button>
+        <button id="confirm-no" class="confirm-btn">取消</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/cart.js"></script>
+</body>
+</html>
